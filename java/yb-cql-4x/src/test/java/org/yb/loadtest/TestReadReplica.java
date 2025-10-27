@@ -23,6 +23,7 @@ import com.datastax.oss.driver.api.core.config.DriverConfigLoader;
 import com.datastax.oss.driver.api.core.config.ProgrammaticDriverConfigLoaderBuilder;
 import com.datastax.oss.driver.api.core.cql.PreparedStatement;
 import com.datastax.oss.driver.api.core.cql.Row;
+import com.datastax.oss.driver.api.core.servererrors.InvalidQueryException;
 import com.datastax.oss.driver.api.querybuilder.SchemaBuilder;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.net.HostAndPort;
@@ -206,6 +207,15 @@ public class TestReadReplica extends BaseMiniClusterTest {
       session.execute(insert_stmt
         .bind(Integer.valueOf(idx), Integer.valueOf(idx), Integer.valueOf(idx))
         .setConsistencyLevel(ConsistencyLevel.YB_CONSISTENT_PREFIX));
+    }
+    try {
+      session.execute(insert_stmt
+        .bind(null, null, null)
+        .setConsistencyLevel(ConsistencyLevel.YB_CONSISTENT_PREFIX));
+      LOG.warn("Expected the insert query with null primary key value to fail");
+      assertTrue(false);
+    } catch (InvalidQueryException e) {
+      // Expected
     }
     PreparedStatement select_stmt;
     stmt = String.format("select r from %s.%s where h = ? and k = ?;",
