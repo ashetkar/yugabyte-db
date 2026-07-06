@@ -20,9 +20,9 @@ The following projects can be used to implement C# applications using the Yugaby
 
 | Project | Documentation and Guides | Latest Driver Version | Supported YugabyteDB Version |
 | :------ | :----------------------- | :-------------------- | :--------------------------- |
-| YugabyteDB C# Driver for YSQL [Recommended] | [Documentation](ysql/) <br /> [Reference](yb-npgsql-reference/) | [9.0.2.2](https://www.nuget.org/packages/NpgsqlYugabyteDB/) | 2.8 and later |
-| PostgreSQL Npgsql Driver | [Documentation](postgres-npgsql/) <br /> [Reference](postgres-npgsql-reference/) | [6.0.3](https://www.nuget.org/packages/Npgsql/) | 2.6 and later |
-| YugabyteDB C# Driver for YCQL | [Documentation](ycql/) | [3.6.0](https://github.com/yugabyte/cassandra-csharp-driver/releases/tag/3.6.0) | |
+| YugabyteDB C# Driver for YSQL [Recommended] | [Documentation](ysql/) <br /> [Reference](yb-npgsql-reference/) | [latest version](https://www.nuget.org/packages/NpgsqlYugabyteDB/) | 2.8 and later |
+| PostgreSQL Npgsql Driver | [Documentation](postgres-npgsql/) <br /> [Reference](postgres-npgsql-reference/) | [latest version](https://www.nuget.org/packages/Npgsql/) | 2.6 and later |
+| YugabyteDB C# Driver for YCQL | [Documentation](ycql/) | [latest version](https://github.com/yugabyte/cassandra-csharp-driver/releases) | |
 
 | Project | Documentation and Guides | Example Apps |
 | :------ | :----------------------- | :---------- |
